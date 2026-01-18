@@ -13,11 +13,11 @@
     <header>
         <span><img src="{% static 'img/bannr_mob_W.png' %}"/></span>
         <nav>
-            <a>COMICS</a>
-            <a>ARCHIVE</a>
-            <a>SKETCHBOOK</a>
-            <a>OTHER</a>
-            <a>ABOUT</a>
+            <a href='{% url "index" %}'>COMICS</a>
+            <a href='{% url "archive" %}'>ARCHIVE</a>
+            <a href='{% url "sketchbook" %}'>SKETCHBOOK</a>
+            <a href='{% url "other" %}'>OTHER</a>
+            <a href='{% url "about" %}'>ABOUT</a>
         </nav>
     </header>
     {% block content %} {% endblock %}
