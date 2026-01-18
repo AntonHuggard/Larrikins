@@ -1,0 +1,18 @@
+{% extends 'larrbase.html' %}
+{% load static %}
+
+{% block content %}
+<div id="main">
+    <img src="{% static img %}">
+    <h3>{{ title }}</h3>
+    <nav>
+        <a>First</a>
+        <a>Prev</a>
+        <a>Random</a>
+        <a>Next</a>
+        <a>Last</a>
+    </nav>
+    <hr/>
+</div>
+
+{% endblock %}

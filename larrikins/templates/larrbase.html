@@ -1,0 +1,32 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="icon" href="{% static 'img/thing.png' %}" />
+    <title>Larrikins v5</title>
+</head>
+<body>
+    <header>
+        <span><img src="{% static 'img/bannr_mob_W.png' %}"/></span>
+        <nav>
+            <a>COMICS</a>
+            <a>ARCHIVE</a>
+            <a>SKETCHBOOK</a>
+            <a>OTHER</a>
+            <a>ABOUT</a>
+        </nav>
+    </header>
+    {% block content %} {% endblock %}
+    <footer>
+        <span>
+            &copy; Anton Huggard 2017-2026<br/>
+            All rights reserved<br/>
+            website version 5
+        </span>
+    </footer>
+</body>
+</html>
