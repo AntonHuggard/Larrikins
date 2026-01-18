@@ -54,6 +54,7 @@ header nav a:hover {
 }
 #main h3 {
     text-align: center;
+    font-size: 2em;
 }
 #main nav {
     display: grid;
@@ -63,6 +64,10 @@ header nav a:hover {
     width: 500px;
     margin-top: 2.5em;
     margin-bottom: 5em;
+}
+#main nav a {
+    text-decoration: none;
+    color: black;
 }
 #main nav a:hover {
     cursor: pointer;

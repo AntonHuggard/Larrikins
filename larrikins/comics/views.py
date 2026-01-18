@@ -8,19 +8,31 @@ def search(request):
     return render(request, "comics/comic.html", context)
 
 def comic_1(request):
-    img = "comics/2018-02-16.png"
-    title = "First"
     context = { 
         "content": "1",
-        "img": img,
-        "title": title
+        "img": "comics/2018-02-16.png",
+        "title": "First",
+        "prev": "comic_1",
+        "next": "comic_2"
         }
     return render(request, "comics/comic.html", context)
 
 def comic_2(request):
-    context = {"content": "2"}
+    context = { 
+        "content": "2",
+        "img": "comics/2018-03-02.png",
+        "title": "Dangerous",
+        "prev": "comic_1",
+        "next": "comic_3"
+        }
     return render(request, "comics/comic.html", context)
 
 def comic_3(request):
-    context = {"content": "3"}
+    context = { 
+        "content": "3",
+        "img": "comics/2018-04-02.png",
+        "title": "Easter Egg",
+        "prev": "comic_2",
+        "next": "comic_3"
+        }
     return render(request, "comics/comic.html", context)

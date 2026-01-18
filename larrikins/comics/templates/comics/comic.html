@@ -6,10 +6,10 @@
     <img src="{% static img %}">
     <h3>{{ title }}</h3>
     <nav>
-        <a>First</a>
-        <a>Prev</a>
+        <a href="{% url 'comic_1' %}">First</a>
+        <a href="{% url prev %}">Prev</a>
         <a>Random</a>
-        <a>Next</a>
+        <a href="{% url next %}">Next</a>
         <a>Last</a>
     </nav>
     <hr/>
