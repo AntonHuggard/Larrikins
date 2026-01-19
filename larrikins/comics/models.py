@@ -2,6 +2,7 @@ from django.db import models
 
 class Comic(models.Model):
     title = models.CharField(max_length=200)
+    img_src = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
     index = models.IntegerField()
     alt_text = models.CharField(max_length=200, null=True)
