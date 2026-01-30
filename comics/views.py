@@ -1,8 +1,9 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect 
 from django.http import HttpResponse
 from django.template import loader
 from django.views import generic
 from .models import Comic
+import random
 
 
 def search(request):
@@ -34,3 +35,9 @@ class ComicView(generic.View):
             "last": "/" + str(last)
             }
         return render(request, "comics/comic.html", context)
+    
+class RandomView(generic.View):
+    def get(self, request, *args, **kwargs):
+        upper_limit = get_highest_index()
+        random_index = random.randrange(1, upper_limit) # there is no comic 0
+        return redirect("comics", pk=random_index)
