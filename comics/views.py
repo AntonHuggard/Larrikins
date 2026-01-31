@@ -29,6 +29,7 @@ class ComicView(generic.View):
         last = get_highest_index()
         context = { 
             "img": "comics/"+obj.img_src,
+            "alt_text": obj.alt_text,
             "title": obj.title,
             "prev": get_prev(obj.index),
             "next": get_next(obj.index, last),
