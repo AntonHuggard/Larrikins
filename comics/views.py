@@ -23,6 +23,23 @@ def get_prev(i):
 def get_next(i, last):
     return "/" + str(min(i + 1, last))
 
+
+class IndexView(generic.View):
+    def get(self, request, *args, **kwargs):
+        last = get_highest_index()
+        obj = Comic.objects.get(id=last)
+        
+        context = { 
+            "img": "comics/"+obj.img_src,
+            "alt_text": obj.alt_text,
+            "title": obj.title,
+            "prev": get_prev(obj.index),
+            "next": get_next(obj.index, last),
+            "last": "/" + str(last)
+            }
+        return render(request, "comics/comic.html", context)
+    
+
 class ComicView(generic.View):
     def get(self, request, pk, *args, **kwargs):
         obj = get_object_or_404(Comic, id=pk)

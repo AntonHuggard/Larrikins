@@ -1,8 +1,8 @@
 from django.shortcuts import render
 
-def index(request):
-    context = {"content": "Larrikins fun times"}
-    return render(request, "webpages/index.html", context)
+# def index(request):
+#     context = {"content": "Larrikins fun times"}
+#     return render(request, "webpages/index.html", context)
 
 
 def archive(request):
