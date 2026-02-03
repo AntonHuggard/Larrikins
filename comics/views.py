@@ -23,35 +23,29 @@ def get_prev(i):
 def get_next(i, last):
     return "/" + str(min(i + 1, last))
 
+def get_context(obj):
+    last = get_highest_index()
+    return { 
+        "img": "comics/"+obj.img_src,
+        "alt_text": obj.alt_text,
+        "title": obj.title,
+        "prev": get_prev(obj.index),
+        "next": get_next(obj.index, last),
+        "last": "/" + str(last)
+    }
 
 class IndexView(generic.View):
     def get(self, request, *args, **kwargs):
         last = get_highest_index()
         obj = Comic.objects.get(id=last)
-        
-        context = { 
-            "img": "comics/"+obj.img_src,
-            "alt_text": obj.alt_text,
-            "title": obj.title,
-            "prev": get_prev(obj.index),
-            "next": get_next(obj.index, last),
-            "last": "/" + str(last)
-            }
+        context = get_context(obj)
         return render(request, "comics/comic.html", context)
     
 
 class ComicView(generic.View):
     def get(self, request, pk, *args, **kwargs):
         obj = get_object_or_404(Comic, id=pk)
-        last = get_highest_index()
-        context = { 
-            "img": "comics/"+obj.img_src,
-            "alt_text": obj.alt_text,
-            "title": obj.title,
-            "prev": get_prev(obj.index),
-            "next": get_next(obj.index, last),
-            "last": "/" + str(last)
-            }
+        context = get_context(obj)
         return render(request, "comics/comic.html", context)
     
 class RandomView(generic.View):
