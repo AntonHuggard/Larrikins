@@ -8,4 +8,5 @@ urlpatterns = [
     path("search", views.search, name="search"),
     path("<int:pk>/", ComicView.as_view(), name="comics"),
     path("random", RandomView.as_view(), name="random"),
+    path("archive", views.archive, name="archive"),
 ]

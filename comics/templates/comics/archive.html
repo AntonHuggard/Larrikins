@@ -1,0 +1,18 @@
+{% extends 'larrbase.html' %}
+{% load static %}
+
+{% block content %}
+<div id="main">
+    <h3>Archive</h3>
+    <input type="text" id="comic-search" placeholder="Search comics"/>
+    <div id="comic-archive">
+        {% for object in object_list %}
+        <a href="{{ object.id }}">
+            <img src="{% static object.img %}" />
+        </a>
+        {% endfor %}
+    </div>
+    <hr/>
+</div>
+
+{% endblock %}

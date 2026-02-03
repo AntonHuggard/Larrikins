@@ -53,3 +53,19 @@ class RandomView(generic.View):
         upper_limit = get_highest_index()
         random_index = random.randrange(1, upper_limit) # there is no comic 0
         return redirect("comics", pk=random_index)
+
+def archive(request):
+    object_list = Comic.objects.all()
+    objs = []
+    for obj in object_list:
+        objs.append({
+            "img": "comics/"+obj.img_src,
+            "id" :obj.index,
+            "date": obj.pub_date
+            })
+    objs.reverse()
+    context = {
+        "content": "Archive",
+        "object_list": objs
+        }
+    return render(request, "comics/archive.html", context)

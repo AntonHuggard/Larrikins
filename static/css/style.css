@@ -74,6 +74,23 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+
+#comic-archive {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#comic-search {
+    padding: 10px;
+    border-radius: 40px;
+    border: 2px solid rgb(77, 77, 77);
+    display: block;
+    margin: auto;
+    width: 400px;
+    padding-left: 20px;
+}
+
+
 footer {
     text-align: center;
     padding-bottom: 5em;

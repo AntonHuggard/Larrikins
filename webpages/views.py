@@ -1,13 +1,6 @@
 from django.shortcuts import render
+from comics.models import Comic
 
-# def index(request):
-#     context = {"content": "Larrikins fun times"}
-#     return render(request, "webpages/index.html", context)
-
-
-def archive(request):
-    context = {"content": "Archive"}
-    return render(request, "webpages/index.html", context)
 
 def sketchbook(request):
     context = {"content": "Sketchbooks"}
