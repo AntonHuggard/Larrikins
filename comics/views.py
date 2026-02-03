@@ -4,6 +4,7 @@ from django.template import loader
 from django.views import generic
 from .models import Comic
 import random
+from django.db.models import Q
 
 
 def search(request):
@@ -55,7 +56,17 @@ class RandomView(generic.View):
         return redirect("comics", pk=random_index)
 
 def archive(request):
+
     object_list = Comic.objects.all()
+    
+    query = request.GET.get("search", None)
+    if query:
+        object_list= object_list.filter(
+            Q(title__icontains=query)
+            | Q(text__icontains=query)
+            | Q(alt_text__icontains=query)
+        )
+    
     objs = []
     for obj in object_list:
         objs.append({

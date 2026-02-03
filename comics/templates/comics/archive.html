@@ -4,7 +4,9 @@
 {% block content %}
 <div id="main">
     <h3>Archive</h3>
-    <input type="text" id="comic-search" placeholder="Search comics"/>
+    <form action="/archive" method="get">
+        <input type="text" name="search" id="comic-search" placeholder="Search comics"/>
+    </form>
     <div id="comic-archive">
         {% for object in object_list %}
         <a href="{{ object.id }}">

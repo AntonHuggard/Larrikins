@@ -19,8 +19,8 @@ def sketchbook_2019(request):
     return render(request, "webpages/index.html", context)
 
 
-def other(request):
-    context = {"content": "Other stuff"}
+def art(request):
+    context = {"content": "Art"}
     return render(request, "webpages/index.html", context)
 
 def about(request):
