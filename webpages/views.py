@@ -4,7 +4,7 @@ from comics.models import Comic
 
 def sketchbook(request):
     context = {"content": "Sketchbooks"}
-    return render(request, "webpages/index.html", context)
+    return render(request, "webpages/sketchbook.html", context)
 
 def sketchbook_2017(request):
     context = {"content": "Sketchbook 2017"}

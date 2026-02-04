@@ -74,6 +74,17 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+.black-background {
+    background-color: black;
+    border-radius: 50px;
+    padding: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.sketchbook-title {
+    width: 350px;
+}
 
 #comic-archive {
     display: grid;
