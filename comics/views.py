@@ -7,11 +7,6 @@ import random
 from django.db.models import Q
 
 
-def search(request):
-    context = {"content": "Search comics"}
-    return render(request, "comics/comic.html", context)
-
-
 def get_highest_index():
     comic_count = Comic.objects.all().count()
     return comic_count
