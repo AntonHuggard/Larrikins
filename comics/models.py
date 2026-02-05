@@ -5,7 +5,7 @@ class Comic(models.Model):
     img_src = models.CharField(max_length=200)
     pub_date = models.DateTimeField("date published")
     index = models.IntegerField()
-    alt_text = models.CharField(max_length=200, null=True)
+    alt_text = models.CharField(max_length=200, null=True, blank=True)
     text = models.TextField(null=True, blank=True)
     
     def __str__(self):

@@ -23,7 +23,7 @@ header span {
 header nav {
     max-width: 1200px;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     margin: auto;
 }
 header nav a {
@@ -92,6 +92,12 @@ header nav a:hover {
     column-gap: 50px;
     max-width: 1000px;
     margin: auto;
+}
+
+#comic-archive a img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: contain;
 }
 
 #comic-search {
