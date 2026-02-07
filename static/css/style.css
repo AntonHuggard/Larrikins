@@ -56,6 +56,9 @@ header nav a:hover {
     text-align: center;
     font-size: 2em;
 }
+.upload-date {
+    text-align: center;
+}
 #main nav {
     display: grid;
     margin: auto;

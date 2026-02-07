@@ -25,6 +25,7 @@ def get_context(obj):
         "img": "comics/"+obj.img_src,
         "alt_text": obj.alt_text,
         "title": obj.title,
+        "uploaded": obj.pub_date,
         "prev": get_prev(obj.index),
         "next": get_next(obj.index, last),
         "last": "/" + str(last)
@@ -69,7 +70,7 @@ def archive(request):
         objs.append({
             "img": "comics/"+obj.img_src,
             "id" :obj.index,
-            "date": obj.pub_date
+            "uploaded": obj.pub_date
             })
 
     context = {
