@@ -8,10 +8,17 @@
         <input type="text" name="search" id="comic-search" placeholder="Search comics"/>
     </form>
     <div id="comic-archive">
-        {% for object in object_list %}
-        <a href="{{ object.id }}">
-            <img src="{% static object.img %}" />
-        </a>
+        <!-- {% for header, objects in object_dict.items %}
+            <li>{{header}} - {{objects}}</li>
+        {% endfor %} -->
+        
+        {% for dict in object_list %}
+            <h3 class="year-header">{{ dict.header }}</h3>
+            {% for object in dict.objects %}
+                <a href="{{ object.id }}">
+                    <img src="{% static object.img %}" />
+                </a>   
+            {% endfor %}
         {% endfor %}
     </div>
     <hr/>
