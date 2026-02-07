@@ -70,9 +70,7 @@ def get_archive_context(object_list, query):
 
     page_content = []
 
-    if query:
-        print("no year partition")
-        
+    if query: # if someone did a keyword search only show matching comics
         content_dict = {'header': 'results'}
         objs = []
 
@@ -84,10 +82,8 @@ def get_archive_context(object_list, query):
         content_dict['objects'] = objs
         page_content.append(content_dict)
 
-    else:
-        print("add year partition")
+    else: # if nothing was searched, show all comics separated by year
         content_dict = {}
-
         years = []
         
         for obj in object_list:
@@ -102,18 +98,13 @@ def get_archive_context(object_list, query):
                     'objects': []
                     }
                 page_content.append(new_dict)
-            
-            # year_dict = page_content
 
             year_dict = next((d for d in page_content if d['header'] == upload_year), None)
-            # print(year_dict)
+            
             year_dict['objects'].append({
                 "img": "comics/"+obj.img_src,
                 "id" :obj.index,
                 })
-
-
-    print(page_content)
 
     return page_content
 
