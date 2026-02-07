@@ -62,6 +62,8 @@ def archive(request):
             | Q(alt_text__icontains=query)
         )
     
+    object_list = object_list.order_by('index').reverse()
+    
     objs = []
     for obj in object_list:
         objs.append({
@@ -69,7 +71,7 @@ def archive(request):
             "id" :obj.index,
             "date": obj.pub_date
             })
-    objs.reverse()
+
     context = {
         "content": "Archive",
         "object_list": objs
