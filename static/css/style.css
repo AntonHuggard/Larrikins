@@ -5,9 +5,7 @@ body {
 img {
     width: 100%;
 }
-hr {
-    border: 1px solid black;
-}
+
 header {
     text-align: center;
 }
@@ -51,6 +49,7 @@ header nav a:hover {
     margin: auto;
     display: block;
     margin-top: 2em;
+    margin-bottom: 2em;
 }
 #main h3 {
     text-align: center;
@@ -105,6 +104,28 @@ header nav a:hover {
 }
 
 
+.about-img {
+    max-height: 400px;
+    width: auto;
+}
+.border {
+    border: 3px solid black;
+}
+#early-drawings {
+    max-width: 800px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: auto;
+}
+#main p {
+    text-align: center;
+}
+
+hr {
+    max-width: 1200px;
+    border: 1px solid black;
+    margin-bottom: 5em;
+}
 footer {
     text-align: center;
     padding-bottom: 5em;
