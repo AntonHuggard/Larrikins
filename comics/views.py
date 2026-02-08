@@ -71,7 +71,7 @@ def get_archive_context(object_list, query):
     page_content = []
 
     if query: # if someone did a keyword search only show matching comics
-        content_dict = {'header': 'results'}
+        content_dict = {'header': 'Search results'}
         objs = []
 
         for obj in object_list:
